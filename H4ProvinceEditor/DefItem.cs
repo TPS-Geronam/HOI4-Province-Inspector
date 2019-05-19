@@ -22,5 +22,9 @@ namespace H4ProvinceEditor {
             Terrain = split[6];
             Continent = Int32.Parse(split[7]);
         }
+
+        public string GetRGBString() {
+            return $"{R};{G};{B}";
+        }
     }
 }

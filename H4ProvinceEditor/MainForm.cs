@@ -149,6 +149,47 @@ namespace H4ProvinceEditor {
             }
         }
 
+        private void GenIDButton_Click(object sender, EventArgs e) {
+            if(!pathToDefinitionBox.Text.Equals("")) {
+                genIDBox.Text = $"{defList.LastOrDefault().Id + 1}";
+            } else {
+                defWarningLabel.Text = "Please select your definition.csv first!";
+            }
+        }
+
+        private void GenRGBButton_Click(object sender, EventArgs e) {
+            if(!pathToDefinitionBox.Text.Equals("")) {
+                Random rnd = new Random();
+                string RGB = $"{rnd.Next(0, 255)};{rnd.Next(0, 255)};{rnd.Next(0, 255)}";
+                foreach(DefItem item in defList) {
+                    if(item.GetRGBString().Equals(RGB)) {
+                        GenRGBButton_Click(sender, e);
+                        return;
+                    }
+                }
+                genRGBBox.Text = RGB;
+            } else {
+                defWarningLabel.Text = "Please select your definition.csv first!";
+            }
+        }
+
+        private void GenResultButton_Click(object sender, EventArgs e) {
+            if(!pathToDefinitionBox.Text.Equals("")) {
+                if(!genIDBox.Text.Equals("") && !genRGBBox.Text.Equals("")) {
+                    if(genTypeCombo.SelectedIndex > -1 && genTerrainCombo.SelectedIndex > -1) {
+                        genErrorLabel.Text = "";
+                        genResult.Text = $"{genIDBox.Text};{genRGBBox.Text};{genTypeCombo.SelectedItem};{genCoastalCheck.Checked.ToString().ToLower()};{genTerrainCombo.SelectedItem};{genContinentNumeric.Value}";
+                    } else {
+                        genErrorLabel.Text = "Please select the type and terrain!";
+                    }
+                } else {
+                    genErrorLabel.Text = "Please generate the ID and RGB!";
+                }
+            } else {
+                defWarningLabel.Text = "Please select your definition.csv first!";
+            }
+        }
+
         private void ImageDisplay_MouseDown(object sender, MouseEventArgs e) {
             if(imageDisplay.Image != null && e.Button == MouseButtons.Left) {
                 if(!pathToDefinitionBox.Text.Equals("")) {

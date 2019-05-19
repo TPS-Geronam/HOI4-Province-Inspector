@@ -60,11 +60,29 @@ namespace H4ProvinceEditor {
             this.searchGroupBox = new System.Windows.Forms.GroupBox();
             this.searchIDRadio = new System.Windows.Forms.RadioButton();
             this.searchRGBRadio = new System.Windows.Forms.RadioButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.genTab = new System.Windows.Forms.TabPage();
+            this.genResultButton = new System.Windows.Forms.Button();
+            this.genResult = new System.Windows.Forms.TextBox();
+            this.genContinentLabel = new System.Windows.Forms.Label();
+            this.genContinentNumeric = new System.Windows.Forms.NumericUpDown();
+            this.genCoastalCheck = new System.Windows.Forms.CheckBox();
+            this.genTypeLabel = new System.Windows.Forms.Label();
+            this.genTerrainLabel = new System.Windows.Forms.Label();
+            this.genTerrainCombo = new System.Windows.Forms.ComboBox();
+            this.genTypeCombo = new System.Windows.Forms.ComboBox();
+            this.genRGBButton = new System.Windows.Forms.Button();
+            this.genRGBLabel = new System.Windows.Forms.Label();
+            this.genIDButton = new System.Windows.Forms.Button();
+            this.genRGBBox = new System.Windows.Forms.TextBox();
+            this.genIDLabel = new System.Windows.Forms.Label();
+            this.genIDBox = new System.Windows.Forms.TextBox();
             this.imageDisplay = new H4ProvinceEditor.ImageDisplay();
+            this.genErrorLabel = new System.Windows.Forms.Label();
             this.toolTabControl.SuspendLayout();
             this.searchTab.SuspendLayout();
             this.searchGroupBox.SuspendLayout();
+            this.genTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.genContinentNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,7 +298,7 @@ namespace H4ProvinceEditor {
             // toolTabControl
             // 
             this.toolTabControl.Controls.Add(this.searchTab);
-            this.toolTabControl.Controls.Add(this.tabPage2);
+            this.toolTabControl.Controls.Add(this.genTab);
             this.toolTabControl.Location = new System.Drawing.Point(364, 392);
             this.toolTabControl.Name = "toolTabControl";
             this.toolTabControl.SelectedIndex = 0;
@@ -388,15 +406,179 @@ namespace H4ProvinceEditor {
             this.searchRGBRadio.Text = "RGB with ID";
             this.searchRGBRadio.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // genTab
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(434, 157);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.genTab.Controls.Add(this.genErrorLabel);
+            this.genTab.Controls.Add(this.genResultButton);
+            this.genTab.Controls.Add(this.genResult);
+            this.genTab.Controls.Add(this.genContinentLabel);
+            this.genTab.Controls.Add(this.genContinentNumeric);
+            this.genTab.Controls.Add(this.genCoastalCheck);
+            this.genTab.Controls.Add(this.genTypeLabel);
+            this.genTab.Controls.Add(this.genTerrainLabel);
+            this.genTab.Controls.Add(this.genTerrainCombo);
+            this.genTab.Controls.Add(this.genTypeCombo);
+            this.genTab.Controls.Add(this.genRGBButton);
+            this.genTab.Controls.Add(this.genRGBLabel);
+            this.genTab.Controls.Add(this.genIDButton);
+            this.genTab.Controls.Add(this.genRGBBox);
+            this.genTab.Controls.Add(this.genIDLabel);
+            this.genTab.Controls.Add(this.genIDBox);
+            this.genTab.Location = new System.Drawing.Point(4, 22);
+            this.genTab.Name = "genTab";
+            this.genTab.Padding = new System.Windows.Forms.Padding(3);
+            this.genTab.Size = new System.Drawing.Size(434, 157);
+            this.genTab.TabIndex = 1;
+            this.genTab.Text = "Generator";
+            this.genTab.UseVisualStyleBackColor = true;
+            // 
+            // genResultButton
+            // 
+            this.genResultButton.Location = new System.Drawing.Point(307, 106);
+            this.genResultButton.Name = "genResultButton";
+            this.genResultButton.Size = new System.Drawing.Size(100, 22);
+            this.genResultButton.TabIndex = 37;
+            this.genResultButton.Text = "Get result";
+            this.genResultButton.UseVisualStyleBackColor = true;
+            this.genResultButton.Click += new System.EventHandler(this.GenResultButton_Click);
+            // 
+            // genResult
+            // 
+            this.genResult.Location = new System.Drawing.Point(11, 107);
+            this.genResult.Name = "genResult";
+            this.genResult.ReadOnly = true;
+            this.genResult.Size = new System.Drawing.Size(285, 20);
+            this.genResult.TabIndex = 35;
+            // 
+            // genContinentLabel
+            // 
+            this.genContinentLabel.AutoSize = true;
+            this.genContinentLabel.Location = new System.Drawing.Point(343, 56);
+            this.genContinentLabel.Name = "genContinentLabel";
+            this.genContinentLabel.Size = new System.Drawing.Size(52, 13);
+            this.genContinentLabel.TabIndex = 34;
+            this.genContinentLabel.Text = "Continent";
+            // 
+            // genContinentNumeric
+            // 
+            this.genContinentNumeric.Location = new System.Drawing.Point(345, 71);
+            this.genContinentNumeric.Name = "genContinentNumeric";
+            this.genContinentNumeric.ReadOnly = true;
+            this.genContinentNumeric.Size = new System.Drawing.Size(62, 20);
+            this.genContinentNumeric.TabIndex = 33;
+            // 
+            // genCoastalCheck
+            // 
+            this.genCoastalCheck.AutoSize = true;
+            this.genCoastalCheck.Location = new System.Drawing.Point(346, 30);
+            this.genCoastalCheck.Name = "genCoastalCheck";
+            this.genCoastalCheck.Size = new System.Drawing.Size(61, 17);
+            this.genCoastalCheck.TabIndex = 32;
+            this.genCoastalCheck.Text = "Coastal";
+            this.genCoastalCheck.UseVisualStyleBackColor = true;
+            // 
+            // genTypeLabel
+            // 
+            this.genTypeLabel.AutoSize = true;
+            this.genTypeLabel.Location = new System.Drawing.Point(253, 14);
+            this.genTypeLabel.Name = "genTypeLabel";
+            this.genTypeLabel.Size = new System.Drawing.Size(31, 13);
+            this.genTypeLabel.TabIndex = 31;
+            this.genTypeLabel.Text = "Type";
+            // 
+            // genTerrainLabel
+            // 
+            this.genTerrainLabel.AutoSize = true;
+            this.genTerrainLabel.Location = new System.Drawing.Point(253, 56);
+            this.genTerrainLabel.Name = "genTerrainLabel";
+            this.genTerrainLabel.Size = new System.Drawing.Size(43, 13);
+            this.genTerrainLabel.TabIndex = 30;
+            this.genTerrainLabel.Text = "Terrain:";
+            // 
+            // genTerrainCombo
+            // 
+            this.genTerrainCombo.FormattingEnabled = true;
+            this.genTerrainCombo.Items.AddRange(new object[] {
+            "plains",
+            "hills",
+            "urban",
+            "forest",
+            "ocean",
+            "mountain",
+            "marsh",
+            "jungle",
+            "desert",
+            "lakes"});
+            this.genTerrainCombo.Location = new System.Drawing.Point(256, 71);
+            this.genTerrainCombo.Name = "genTerrainCombo";
+            this.genTerrainCombo.Size = new System.Drawing.Size(70, 21);
+            this.genTerrainCombo.TabIndex = 29;
+            // 
+            // genTypeCombo
+            // 
+            this.genTypeCombo.FormattingEnabled = true;
+            this.genTypeCombo.Items.AddRange(new object[] {
+            "land",
+            "sea",
+            "lake"});
+            this.genTypeCombo.Location = new System.Drawing.Point(256, 29);
+            this.genTypeCombo.Name = "genTypeCombo";
+            this.genTypeCombo.Size = new System.Drawing.Size(70, 21);
+            this.genTypeCombo.TabIndex = 28;
+            // 
+            // genRGBButton
+            // 
+            this.genRGBButton.Location = new System.Drawing.Point(132, 71);
+            this.genRGBButton.Name = "genRGBButton";
+            this.genRGBButton.Size = new System.Drawing.Size(100, 22);
+            this.genRGBButton.TabIndex = 27;
+            this.genRGBButton.Text = "Get possible RGB";
+            this.genRGBButton.UseVisualStyleBackColor = true;
+            this.genRGBButton.Click += new System.EventHandler(this.GenRGBButton_Click);
+            // 
+            // genRGBLabel
+            // 
+            this.genRGBLabel.AutoSize = true;
+            this.genRGBLabel.Location = new System.Drawing.Point(8, 56);
+            this.genRGBLabel.Name = "genRGBLabel";
+            this.genRGBLabel.Size = new System.Drawing.Size(33, 13);
+            this.genRGBLabel.TabIndex = 26;
+            this.genRGBLabel.Text = "RGB:";
+            // 
+            // genIDButton
+            // 
+            this.genIDButton.Location = new System.Drawing.Point(132, 29);
+            this.genIDButton.Name = "genIDButton";
+            this.genIDButton.Size = new System.Drawing.Size(100, 22);
+            this.genIDButton.TabIndex = 25;
+            this.genIDButton.Text = "Get possible ID";
+            this.genIDButton.UseVisualStyleBackColor = true;
+            this.genIDButton.Click += new System.EventHandler(this.GenIDButton_Click);
+            // 
+            // genRGBBox
+            // 
+            this.genRGBBox.Location = new System.Drawing.Point(11, 72);
+            this.genRGBBox.Name = "genRGBBox";
+            this.genRGBBox.ReadOnly = true;
+            this.genRGBBox.Size = new System.Drawing.Size(100, 20);
+            this.genRGBBox.TabIndex = 25;
+            // 
+            // genIDLabel
+            // 
+            this.genIDLabel.AutoSize = true;
+            this.genIDLabel.Location = new System.Drawing.Point(8, 14);
+            this.genIDLabel.Name = "genIDLabel";
+            this.genIDLabel.Size = new System.Drawing.Size(21, 13);
+            this.genIDLabel.TabIndex = 26;
+            this.genIDLabel.Text = "ID:";
+            // 
+            // genIDBox
+            // 
+            this.genIDBox.Location = new System.Drawing.Point(11, 30);
+            this.genIDBox.Name = "genIDBox";
+            this.genIDBox.ReadOnly = true;
+            this.genIDBox.Size = new System.Drawing.Size(100, 20);
+            this.genIDBox.TabIndex = 25;
             // 
             // imageDisplay
             // 
@@ -407,6 +589,15 @@ namespace H4ProvinceEditor {
             this.imageDisplay.TabIndex = 0;
             this.imageDisplay.TabStop = false;
             this.imageDisplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ImageDisplay_MouseDown);
+            // 
+            // genErrorLabel
+            // 
+            this.genErrorLabel.AutoSize = true;
+            this.genErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.genErrorLabel.Location = new System.Drawing.Point(8, 135);
+            this.genErrorLabel.Name = "genErrorLabel";
+            this.genErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.genErrorLabel.TabIndex = 25;
             // 
             // mainForm
             // 
@@ -447,6 +638,9 @@ namespace H4ProvinceEditor {
             this.searchTab.PerformLayout();
             this.searchGroupBox.ResumeLayout(false);
             this.searchGroupBox.PerformLayout();
+            this.genTab.ResumeLayout(false);
+            this.genTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.genContinentNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -488,8 +682,24 @@ namespace H4ProvinceEditor {
         private Label searchIDLabel;
         private Label searchRGBLabel;
         private GroupBox searchGroupBox;
-        private TabPage tabPage2;
+        private TabPage genTab;
         private Label searchErrorLabel;
+        private Button genIDButton;
+        private Label genIDLabel;
+        private TextBox genIDBox;
+        private Button genRGBButton;
+        private Label genRGBLabel;
+        private TextBox genRGBBox;
+        private ComboBox genTypeCombo;
+        private Label genTypeLabel;
+        private Label genTerrainLabel;
+        private ComboBox genTerrainCombo;
+        private NumericUpDown genContinentNumeric;
+        private CheckBox genCoastalCheck;
+        private Label genContinentLabel;
+        private Button genResultButton;
+        private TextBox genResult;
+        private Label genErrorLabel;
     }
 
     public class ImageDisplay : PictureBox {
