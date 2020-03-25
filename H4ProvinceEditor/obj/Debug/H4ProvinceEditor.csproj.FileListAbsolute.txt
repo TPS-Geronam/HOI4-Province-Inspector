@@ -21,3 +21,15 @@ E:\VS Projects\H4ProvinceEditor\H4ProvinceEditor\bin\Debug\H4ProvinceInspector.e
 E:\VS Projects\H4ProvinceEditor\H4ProvinceEditor\bin\Debug\H4ProvinceInspector.pdb
 E:\VS Projects\H4ProvinceEditor\H4ProvinceEditor\obj\Debug\H4ProvinceInspector.exe
 E:\VS Projects\H4ProvinceEditor\H4ProvinceEditor\obj\Debug\H4ProvinceInspector.pdb
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\bin\Debug\resources\errorlog.txt
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\bin\Debug\H4ProvinceInspector.exe.config
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\bin\Debug\H4ProvinceInspector.exe
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\bin\Debug\H4ProvinceInspector.pdb
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceEditor.csprojAssemblyReference.cache
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceEditor.HelpWindow.resources
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceEditor.mainForm.resources
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceEditor.Properties.Resources.resources
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceEditor.csproj.GenerateResource.cache
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceEditor.csproj.CoreCompileInputs.cache
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceInspector.exe
+E:\VS Projects\HoI4-Province-Inspector\H4ProvinceEditor\obj\Debug\H4ProvinceInspector.pdb
